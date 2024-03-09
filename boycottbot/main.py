@@ -119,7 +119,7 @@ def refresh_token():
     new_token_info = response.json()
 
     session['access_token'] = new_token_info['access_token']
-    session['expires_at'] = datetime.now().timestamp() + new_token_info['access_token']
+    session['expires_at'] = datetime.now().timestamp() + new_token_info['expires_in']
 
     return redirect('/listening')
 
