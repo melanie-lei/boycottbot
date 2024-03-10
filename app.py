@@ -25,7 +25,7 @@ TOKEN_URL = 'https://accounts.spotify.com/api/token'
 SPOTIFY_GET_CURRENT_TRACK_URL = 'https://api.spotify.com/v1/me/player/currently-playing'
 SPOTIFY_SKIP_URL = 'https://api.spotify.com/v1/me/player/next'
 
-to_boycott = ["SEVENTEEN", "ENHYPEN", "NewJeans", "TOMORROW X TOGETHER", "LE SSERAFIM", "BOYNEXTDOOR", "TWS"]
+to_boycott = ["SEVENTEEN", "ENHYPEN", "NewJeans", "TOMORROW X TOGETHER", "LE SSERAFIM", "BOYNEXTDOOR", "TWS", "fromis_9", "Stray Kids"]
 
 
 @app.route('/')
