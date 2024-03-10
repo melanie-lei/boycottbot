@@ -113,7 +113,7 @@ def get_listening():
   if remove_artist in to_boycott:
     to_boycott.remove(remove_artist)
 
-  render_template('index.html')
+  return render_template('index.html')
   
 
 @app.route('/refresh-token')
