@@ -63,6 +63,7 @@ def callback():
     }
 
     response = requests.post(TOKEN_URL, data=req_body)
+    print(response.text)
     token_info = response.json()
 
     session['access_token'] = token_info['access_token']
