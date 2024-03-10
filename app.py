@@ -18,7 +18,7 @@ app.secret_key = os.getenv("APP_KEY")
 
 
 
-REDIRECT_URI = 'http://localhost:5000/callback'
+REDIRECT_URI = 'https://boycottbot.onrender.com'
 AUTH_URL = 'https://accounts.spotify.com/authorize'
 TOKEN_URL = 'https://accounts.spotify.com/api/token'
 
