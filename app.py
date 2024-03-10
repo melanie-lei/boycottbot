@@ -1,6 +1,6 @@
 from datetime import datetime
 from dotenv import load_dotenv
-from flask import Flask, copy_current_request_context, jsonify, redirect, session, request
+from flask import Flask, copy_current_request_context, jsonify, redirect, render_template, session, request
 import threading
 
 
@@ -73,7 +73,7 @@ def callback():
     return redirect('/listening')
 
 
-@app.route('/listening')
+@app.route('/listening', methods=['POST', 'GET'])
 def get_listening():
   if 'access_token' not in session:
     return redirect('/login')
@@ -100,7 +100,18 @@ def get_listening():
 
   threading.Thread(target=check).start()
 
-  return "checking for you!"
+
+  if request.method == 'POST':
+    add_artist = request.form['add-artist']
+    remove_artist = request.form['remove-artist']
+
+  if add_artist not in to_boycott:
+    to_boycott.append(add_artist)
+
+  if remove_artist in to_boycott:
+    to_boycott.remove(remove_artist)
+
+  render_template('index.html')
   
 
 @app.route('/refresh-token')
