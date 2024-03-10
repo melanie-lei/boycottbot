@@ -100,6 +100,8 @@ def get_listening():
 
   threading.Thread(target=check).start()
 
+  add_artist = ""
+  remove_artist = ""
 
   if request.method == 'POST':
     add_artist = request.form['add-artist']
