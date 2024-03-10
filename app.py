@@ -95,7 +95,7 @@ def get_listening():
         if track['item']['album']['artists'][0]['name'] in to_boycott:
           requests.post(SPOTIFY_SKIP_URL, headers=headers)
 
-      time.sleep(1)
+      time.sleep(3)
     return redirect('/refresh-token')
 
   threading.Thread(target=check).start()
@@ -113,7 +113,7 @@ def get_listening():
   if remove_artist in to_boycott:
     to_boycott.remove(remove_artist)
 
-  return render_template('index.html')
+  return render_template('index.html', boycotted_artists=to_boycott)
   
 
 @app.route('/refresh-token')
